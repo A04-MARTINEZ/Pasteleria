@@ -1,0 +1,111 @@
+/*quita imagenes y establece fuente*/
+body{
+    margin: 40px;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+/*contenedor principal con dos columnas*/
+.principal {
+    display: flex;
+    height: 100vh;
+}
+
+/*lado izquierdo con fondo rosa y la imagen*/
+.imagen{
+    flex: 1;
+    background-color: rgb(221, 91, 113);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/*imagen sin redondeo*/
+.imagen img{
+    height: 420px;
+    width: auto;
+    border-radius: 0;
+}
+
+/*lado derecho con el formulario*/
+.formulario{
+    flex: 1;
+    background-color: palevioletred;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*titulo centrado*/
+.formulario h2{
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.formulario p{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*campos del fprmulario*/
+label{
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type ="text"]{
+    width: 100px;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+/* Boton*/
+button {
+width: 100px;
+padding: 12px;
+background-color: #ff66cc;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 16px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover{
+    background-color: #e055b8;
+}
+
+/* Enlace para registrarse*/
+.formulario i {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.formulario a {
+    color: #ffcfff;
+    text-decoration: none;
+}
+
+.formulario a:hover {
+    text-decoration: underline;
+}
+
+
+ 

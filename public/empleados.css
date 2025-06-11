@@ -1,0 +1,209 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+nav {
+    margin: 40px auto;
+    background-color: #49a0db;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 25px;
+}
+
+nav a {
+    color: rgb(191, 203, 211);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* CSS */
+.navbar {
+  background-color: #002f6c; /* Azul oscuro */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #004a99; /* Azul un poco más claro al pasar el mouse */
+}
+
+.navbar .logout {
+  margin-left: auto; /* Empuja "Cerrar sesión" a la derecha */
+  background-color: #c0392b; /* Rojo para resaltar */
+}
+
+.navbar .logout:hover {
+  background-color: #e74c3c;
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Contenedor del formulario y tabla */
+.container {
+    width: 60%;
+    margin: 30px auto;
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+button {
+    background-color: #1E90FF;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0b74d0;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #1E2B91;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Botón de eliminar */
+.eliminar-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.eliminar-btn:hover {
+    background-color: #b71c1c;
+}
+
+nav{
+    margin: 40px auto;
+    background-color: #4bb1f5;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 25px;
+ }
+
+ a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.599);
+    padding: 10px;
+    border-radius: 15px;
+    transition: 1s;
+    font-weight: bold;
+ }
+
+ .a:hover{
+   background-color: aqua;
+   color: black;
+ }
+ .menu{
+    margin: 40px auto;
+    background-color: #49a0db;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 25px;
+ }
+
+ .agregar-empleado-container{
+     margin: 40px auto;
+    background-color: #d9e2e8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 25px;
+ }
+
+ .tabla-container{
+    margin: 40px auto;
+    background-color: #d9e2e8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 25px;
+ }
+
+  th, td{
+   padding:12px;
+   text-align: center;
+}
+
+th{
+   background-color: #325dd3;
+   color: rgb(0, 0, 0);
+   font-size: 18px;
+}
+
+ td{
+   background-color:rgb(255, 255, 255);
+  
+ }

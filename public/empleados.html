@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="imagen/png" href="imagen.png">
+     <link rel="stylesheet" href="empleados.css">
+    <title>Empleados</title>
+</head>
+<body>
+    
+    <!--menu de navegacion-->
+    <div class="menu">
+        <a href="principal.html"> Menu principal</a>
+        <a href="pasteles.html"> Pasteles</a>
+        <a href="pedidos.html"> Pedidos</a>
+        <a href="index.html"> Cerrar sesion</a>
+    </div>
+
+    <h2>Lista de empleados</h2>
+
+    <div class="agregar-empleado-container">
+        <h3>Agregar empleado</h3>
+        <form id="formEmpleado" class="form-horizontal">
+            <input type="text" id="nombre" placeholder="nombre" required>
+            <input type="text" id="rol" placeholder="rol" required >
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+    <!--tabla de empleados agregados-->
+
+    <div class="tabla-container">
+        <table id="tablaEmpleados">
+<thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      
+    </tr>
+</thead>
+<tbody>
+
+</tbody>
+        </table>
+    </div>
+
+    <script>
+        //funcion para cargar y mostrar empleados
+        async function cargarEmpleados(){
+            const res = await fetch('/api/empleados');
+            const empleados = await res.json();
+            const tbody = document.querySelector('#tablaEmpleados tbody');
+            tbody.innerHTML = empleados.map(p =>  `
+           <tr> 
+            <td>${p.nombre}</td>
+            <td>${p.rol}</td>
+            <td>
+                <button class="btn-eliminar"
+                onclick = "eliminarEmpleado('${p._id}')"> Eliminar
+                </button>
+                </td>
+            </tr> 
+        `).join('');
+        }
+
+         // Función para eliminar un empleado por su ID, preguntando antes al usuario
+        async function eliminarEmpleado(id) {
+            const confirmar = confirm('¿Estás seguro de que deseas eliminar este Empleado?');
+            if (!confirmar) return;
+            await fetch(`/api/empleados/${id}`, { method: 'DELETE' });
+            cargarEmpleados();
+        }
+
+        //MANEJAR EL EVENTO SUBMIT
+        document.getElementById('formEmpleado').addEventListener('submit', async(e) => {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const rol = document.getElementById('rol').value;
+
+
+        await fetch ('/api/empleados',{
+            
+       
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({nombre,rol})
+        });
+        document.getElementById('formEmpleado').rest;
+        cargarEmpleados();
+    });
+
+        // Llama a la función para cargar los empleados al cargar la página
+        cargarEmpleados();
+
+        // Hace la función eliminarEmpleado accesible globalmente
+        window.eliminarEmpleado = eliminarEmpleado;
+           
+    </script>
+</body>
+</html>
