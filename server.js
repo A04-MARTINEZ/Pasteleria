@@ -10,7 +10,7 @@ const { parseURL } = require('whatwg-url');
 //crear una instancia de la aplicacion express
 const app=express();
 //definir el puerto donde se ejcutaara el server
-const PORT=3000;
+const PORT= process.env.PORT || 3000; //use el puerto que asigne railway o local 3000
 
 //habilitar cors par permitir peticiones
 app.use(cors());
@@ -18,18 +18,17 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //detectar archivos estaticos de la carpeta public
-app.use(express.static('public'));
+app.use(express.static('public')); //sirvee archivos estaticos desde "public"
 
-//conexion mongoDB
 
-//conectarse a pasteleria
-mongoose.connect('mongodb://localhost:27017/pasteleria',{
+//conexxion a mongodb atlas usando variable de entorno
+mongoose.connect(process.env.MONGODB_URI,{
 useNewUrlParser:true,//usar el parser de url
 useUnifiedTopology: true //motor de monitoreo  
 })
 
 //si la conexion es exitosa, muestra mensaje
-.then(() =>console.log('conectado a mongo'))
+.then(() =>console.log('conectado a mongo atlas'))
 //si hay un error, que muestre un mensaje
 .catch (err=>console.error(err));
 
